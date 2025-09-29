@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.menu_items{
+  font-size: 16px;
+  font-weight: 500;
+  color: #505050;
+}
+
+.display-2{
+  font-weight: bold;
+  font-family: 'Shabnam';
+  line-height: 120%;
+  font-size: 54px;
+  color: #EDEDED;
+}
+
+
+.heading-3{
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 140%;
+}
+
+.heading-5{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 140%;
+}
+
+.heading-6{
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.body-reg14{
+  font-weight:400;
+  font-size: 14px;
+  line-height: auto;
+  color: #505050;
+}
+
+
+
+.body-xlg{
+  font-weight: medium;
+  font-size: 32px;
+  line-height: 140%;
+}
+
+.body-smd{
+  font-weight:400;
+  font-size: 24px;
+  line-height: 140%;
+}
+
+.body-s{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+}
+
+.body-xs{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 180%;
+}
+
+.body-xxs{
+  font-weight:400;
+  font-size: 14px;
+  line-height: 180%;
+}
+
+.body-xxxs{
+  font-weight:400;
+  font-size: 12px;
+  line-height: 140%;
+}
+.caption-md{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 180%;
+}
+
+.caption-lg{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 180%;
+}
+.news-text{
+  font-weight:500;
+  font-size: 16px;
+  line-height: 130%;
+  color: black;
+}
+
+.ht-bold16{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.button-md{
+  font-weight: medium;
+  font-size:  14px;
+  line-height: 180%;
+}
+
+.header-4{
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 140%;
+
+}
+
+.heading-4{
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 140%;
+}
+
+@media (max-width: 1200px){
+  .display-2{
+    font-size: 40px;
+  }
+  .heading-3{
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 600px) {
+  .display-2 {
+    font-size: 28px;
+  }
+  .heading-3{
+    font-size: 20px;
+  }
+  .heading-6{
+  /* font-weight: bold; */
+  font-size: 12px;
+  line-height: 120%;
+}
+.body-xs{
+  font-size: 10px;
+  /* font-weight: 400; */
+  line-height: 140%;
+}
+  /* .body-reg14{
+    font-size: 12px;
+  } */
+}

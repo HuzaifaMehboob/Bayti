@@ -1,0 +1,372 @@
+{
+  "navbar": {
+    "li": [
+      "Latest News",
+      "Real Estate Agents",
+      "Real Estate",
+      "Buy",
+      "Rent"
+    ],
+    "end": [
+      "Login",
+      "Post Ad",
+      "Logout"
+    ]
+  },
+  "hero": {
+    "title": "Saqfino; A Roof for Everyone",
+    "subtitle": "Experience the ease and speed of finding a new roof with Saqfino",
+    "buy": "Buy",
+    "rent": "Rent",
+    "searchPlaceholder": "Search for a city"
+  },
+  "propertySection": {
+    "question": "What type of property are you looking for in Saghfino?",
+    "stats": {
+      "numbers": [
+        "27,339",
+        "946",
+        "309,798",
+        "28,900"
+      ],
+      "types": [
+        "Commercial & Office",
+        "Villa",
+        "Apartment & Tower",
+        "Residential House"
+      ]
+    }
+  },
+  "howItWorks": {
+    "title": "How Saghfino Helps You Become a Homeowner",
+    "cards": [
+      {
+        "heading": "Are you an owner?",
+        "paragraph": "Did you know that our website receives thousands of visitors daily? With just a few clicks, you can post your property for free on Saghfino and make a deal in the shortest time possible.",
+        "button": "Post Ad"
+      },
+      {
+        "heading": "Buy Your Dream Home",
+        "paragraph": "There are over 1 million sale listings on Saghfino. In addition to the vast number of ads, we work with real estate agents and specialists in every city to ensure you enjoy an easy and pleasant buying experience.",
+        "button": "Buy a Home"
+      },
+      {
+        "heading": "Rent a Home Easily",
+        "paragraph": "Among hundreds of ads added to Saghfino every day, we’ve provided more than 28 powerful filters to help you quickly find and rent the home you’re searching for.",
+        "button": "Rent a Home"
+      }
+    ]
+  },
+  "consultantsSection": {
+    "heading": "Everyone gives you advice!",
+    "description": "But in Saqfino, real estate consultants stay by your side.",
+    "cards": [
+      {
+        "title": "Easy communication with the best real estate agencies and consultants"
+      },
+      {
+        "title": "Compare and review hundreds of properties easily and in no time"
+      },
+      {
+        "title": "Ability to buy and rent property in most parts of the country"
+      }
+    ]
+  },
+  "newsSection": {
+    "heading": "Follow the latest real estate news on Saqfino",
+    "cards": [
+      {
+        "title": "Zamzam Coastal Town in the Noor region of Mazandaran Province entered the auction market on September 3rd."
+      },
+      {
+        "title": "The domestic architects’ business has slowed down due to rising prices of raw materials and imported construction supplies."
+      },
+      {
+        "title": "Is the risk of earthquake damage greater in skyscrapers, low-rise apartments, or houses?"
+      },
+      {
+        "title": "Housing market recession: Sellers are waiting for buyers, and buyers are waiting for prices to drop."
+      }
+    ]
+  },
+  "footer": {
+    "heading": "Saghfino; An Ideal Roof for Life",
+    "grids": [
+      {
+        "title": "Top Real Estate Consultants",
+        "items": [
+          "Mitra Jabari",
+          "Hesam-eddin Azizi",
+          "Bahram Mashouf"
+        ]
+      },
+      {
+        "title": "Most Searched",
+        "items": [
+          "Apartment near Metro",
+          "Main Street House",
+          "Single-unit Apartment"
+        ]
+      },
+      {
+        "title": "Real Estate Markets",
+        "items": [
+          "Tehran Real Estate Market",
+          "Isfahan Real Estate Market",
+          "Northern Real Estate Market"
+        ]
+      },
+      {
+        "title": "Contact Us",
+        "items": [
+          "Phone",
+          "Instagram",
+          "Telegram"
+        ]
+      }
+    ],
+    "experience": [
+      "Enjoy the home-owning experience quickly and easily",
+      "Saghfino helps you search quickly among thousands of listings",
+      "Find your desired property and connect with trusted local real estate agents for a secure transaction"
+    ],
+    "cards": [
+      {
+        "title": "Services",
+        "items": [
+          "Rent",
+          "Buy",
+          "Post Free Property Ad",
+          "Real Estate",
+          "Real Estate Agents",
+          "Daily Real Estate News",
+          "Have a Real Estate Question?"
+        ]
+      },
+      {
+        "title": "Information",
+        "items": [
+          "Download Saghfino App",
+          "Contact Us",
+          "Story of Saghfino",
+          "Frequently Asked Questions",
+          "Blog Saghfino",
+          "Your Privacy",
+          "Our Commitments"
+        ]
+      },
+      {
+        "title": "User Account",
+        "items": [
+          "My Profile",
+          "Saved Properties",
+          "My Ads"
+        ]
+      }
+    ],
+    "cards": [
+      {
+        "title": "Services",
+        "items": [
+          "Rent",
+          "Buy",
+          "Post Free Property Ad",
+          "Real Estate",
+          "Real Estate Agents",
+          "Daily Real Estate News",
+          "Have a Real Estate Question?"
+        ]
+      },
+      {
+        "title": "Information",
+        "items": [
+          "Download Saghfino App",
+          "Contact Us",
+          "Story of Saghfino",
+          "Frequently Asked Questions",
+          "Blog Saghfino",
+          "Your Privacy",
+          "Our Commitments"
+        ]
+      },
+      {
+        "title": "User Account",
+        "items": [
+          "My Profile",
+          "Saved Properties",
+          "My Ads"
+        ]
+      }
+    ],
+    "footerCopyright": "All rights of this site belong to Saghfino"
+  },
+  "propertyTypeSection": {
+    "heading": "How we can help?",
+    "categories": [
+      {
+        "label": "Apartment",
+        "icon": "PiBuildingLight"
+      },
+      {
+        "label": "House",
+        "icon": "PiHouseLight"
+      },
+      {
+        "label": "Beach House",
+        "icon": "PiUmbrellaLight"
+      },
+      {
+        "label": "Cabins",
+        "icon": "LuTreePine"
+      },
+      {
+        "label": "Pool House",
+        "icon": "PiSwimmingPoolLight"
+      },
+      {
+        "label": "Lakefront",
+        "icon": "LuWaves"
+      },
+      {
+        "label": "Farm House",
+        "icon": "PiBarnLight"
+      }
+    ]
+  },
+  "filters": {
+    "filterMaps": [
+      {
+        "name": "Region"
+      },
+      {
+        "name": "Property Type"
+      },
+      {
+        "name": "Price"
+      },
+      {
+        "name": "Area"
+      }
+    ],
+    "moreFilters": "More Filters",
+    "tehran": "Tehran",
+    "addCity": "Add Desired City"
+  },
+  "SearchResults": {
+    "relatedRealEstateOffices": "Related Real Estate Offices",
+    "rentalPropertiesFound": "700 rental properties found",
+    "relatedLinks": {
+      "heading": "Related Links",
+      "propertiesInQeytarieh": "Properties in Qeytarieh",
+      "propertiesInElahieh": "Properties in Elahieh",
+      "propertiesInDarrous": "Properties in Darrous",
+      "propertiesInVelenjak": "Properties in Velenjak",
+      "propertiesInPunak": "Properties in Punak",
+      "propertiesInNarmak": "Properties in Narmak"
+    }
+  },
+  "RelatedOffices": {
+    "relatedRealEstateOffices": "Related Real Estate Offices",
+    "offices": [
+      {
+        "name": "Alborz Real Estate",
+        "address": "Tehran, Ajoudanieh, Alborz Street",
+        "satisfaction": "Satisfaction: 5 out of 5",
+        "activeListings": "Active Listings: More than 1,700",
+        "viewReviews": "View User Reviews (20 reviews)"
+      },
+      {
+        "name": "Valiasr Real Estate",
+        "address": "Tehran, Valiasr Street, Tavanir",
+        "satisfaction": "Satisfaction: 4 out of 5",
+        "activeListings": "Active Listings: More than 2,000",
+        "viewReviews": "View User Reviews (12 reviews)"
+      }
+    ]
+  },
+  "RecommendedProperties": {
+    "heading": "Related Links",
+    "locations": [
+      {
+        "name": "Qeytarieh",
+        "label": "Properties in Qeytarieh"
+      },
+      {
+        "name": "Elahieh",
+        "label": "Properties in Elahieh"
+      },
+      {
+        "name": "Darrous",
+        "label": "Properties in Darrous"
+      },
+      {
+        "name": "Velenjak",
+        "label": "Properties in Velenjak"
+      },
+      {
+        "name": "Punak",
+        "label": "Properties in Punak"
+      },
+      {
+        "name": "Narmak",
+        "label": "Properties in Narmak"
+      }
+    ]
+  },
+  "AgentFilters": [
+    {
+      "key": "city",
+      "label": "City"
+    },
+    {
+      "key": "district",
+      "label": "District"
+    },
+    {
+      "key": "propertyType",
+      "label": "Property Type"
+    },
+    {
+      "key": "price",
+      "label": "Price"
+    },
+    {
+      "key": "area",
+      "label": "Area (sqm)"
+    }
+  ],
+  "reviewDemo": {
+    "reviewer_name": "Roya",
+    "rating_text": "Rating: 5 out of 5",
+    "rating": 5,
+    "title": "Dream",
+    "review": "I am really satisfied with the way they treat customers and the time they dedicate to them. Because of my busy schedule, I didn’t have much time, but with proper planning, I was able to easily find my desired home with the help of Tusi Agency consultants."
+  },
+  "AdminSideBar": {
+    "username": "Username",
+    "edit_info": "Edit Information",
+    "new_listing": "Post New Listing",
+    "my_listings": "My Listings",
+    "saved_listings": "Saved Listings",
+    "logout": "Logout"
+  },
+  "Add_Listing": {
+    "heading": "Add New Property",
+    "title": "Title",
+    "title_placeholder": "Enter property title",
+    "description": "Description",
+    "description_placeholder": "Enter property description",
+    "price": "Price",
+    "location": "Location",
+    "location_placeholder": "Enter location",
+    "type": "Property Type",
+    "apartment": "Apartment",
+    "villa": "Villa",
+    "house": "House",
+    "commercial": "Commercial",
+    "rooms": "Rooms",
+    "baths": "Bathrooms",
+    "upload_photos": "Upload Photos",
+    "submit": "Add Property"
+  }
+}
