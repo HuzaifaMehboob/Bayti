@@ -368,5 +368,124 @@
     "baths": "Bathrooms",
     "upload_photos": "Upload Photos",
     "submit": "Add Property"
+  },
+  "about-us-page": {
+    "heading": "The Story of Saqfito",
+    "subheading": "We believe that every person has their own roof",
+    "tagline": "Until you find your ideal roof, we are by your side",
+    "paragraph": "So that you can complete your transactions and purchases with peace of mind.\nThe Saqfino website hosts a large collection of verified properties, along with identity-verified real estate consultants, making it a comprehensive source of real estate information across most regions of the country.\nBy bringing in professional advisors, we have made it possible for you to receive specialized guidance for safer and better choices.\nAt Saqfino, there is always a home waiting for you.\nWhether you are looking for a cozy home, managing a real estate agency, or working as an independent consultant, we are always with you.\nThe development of the internet has completely transformed the way we buy and sell. The advantages of this method—greater ease and speed—have encouraged people to try it and shift away from traditional transaction models.\nAs daily routines and busy schedules reduce leisure time, spending long hours commuting within cities and handling everyday tasks has lost much of its meaning.\nStill, some people remain hesitant to trust these methods due to their virtual nature.\nThe Saqfino website specializes in rental, purchase, and sale of properties across the country.\nIt constantly works to verify and provide accurate, up-to-date information from different regions for you."
+  },
+  "contact-us-page": {
+    "contact_full": "Contact us — we're with you until we find the best roof.",
+    "title": "Contact Us",
+    "contact_message": "We're with you until we find the best roof",
+    "support": "24-hour support",
+    "phone": "021-41067000",
+    "call_to_action": "Get in touch"
+  },
+  "contact-us-page-cards": {
+    "office_title": "Saqfino Head Office",
+    "google_map": "Search with Google Map",
+    "address": "Golestan Town, Havanirooz Street, Kaj Office Building, 1st Floor"
+  },
+  "register": {
+    "step1": {
+      "heading": "Please complete the following fields",
+      "cityLabel": "City",
+      "cityPlaceholder": "Please select your city",
+      "areaLabel": "Area",
+      "areaPlaceholder": "Please select your area",
+      "mainStreetLabel": "Main Street",
+      "mainStreetPlaceholder": "Enter your address",
+      "sideStreetLabel": "Side Street / Alley",
+      "sideStreetPlaceholder": "Enter additional address details",
+      "previousButton": "Previous",
+      "nextButton": "Next"
+    },
+    "step2": {
+      "heading": "Please complete the following fields",
+      "dealTypeLabel": "Transaction Type",
+      "dealTypePlaceholder": "Please select the type of transaction",
+      "propertyTypeLabel": "Property Type",
+      "propertyTypePlaceholder": "Please select the type of property",
+      "depositLabel": "Deposit (Rahn)",
+      "depositPlaceholder": "e.g., 50 million Toman",
+      "rentLabel": "Rent",
+      "rentPlaceholder": "e.g., 2 million Toman",
+      "convertibleLabel": "Convertible"
+    },
+    "step3": {
+      "heading": "Please select the following details",
+      "areaLabel": "Area (m²)",
+      "areaPlaceholder": "Enter the property area",
+      "roomsLabel": "Rooms",
+      "roomsPlaceholder": "Enter number of rooms",
+      "floorLabel": "Floor",
+      "floorPlaceholder": "Enter the property floor",
+      "totalFloorsLabel": "Total Floors",
+      "totalFloorsPlaceholder": "Enter total number of floors",
+      "previousButton": "Previous",
+      "nextButton": "Next"
+    },
+    "step4": {
+      "heading": "Please select the following details",
+      "parkingLabel": "Parking",
+      "parkingPlaceholder": "Enter the number of parkings",
+      "bathroomLabel": "Bathroom",
+      "bathroomPlaceholder": "Enter the number of bathrooms",
+      "storageLabel": "Storage Room",
+      "storagePlaceholder": "Enter the number of storage rooms",
+      "bathroomTypeLabel": "Bathroom Type",
+      "bathroomTypePlaceholder": "Western",
+      "elevatorLabel": "Elevator",
+      "elevatorPlaceholder": "Specify the number of elevators",
+      "coolingSystemLabel": "Cooling System",
+      "coolingSystemPlaceholder": "Chiller",
+      "floorMaterialLabel": "Floor Material",
+      "floorMaterialPlaceholder": "Ceramic",
+      "heatingSystemLabel": "Heating System",
+      "heatingSystemPlaceholder": "Radiator",
+      "previousButton": "Previous",
+      "nextButton": "Next"
+    },
+    "step5": {
+      "heading": "If you have any additional notes, please write them below",
+      "notesLabel": "Additional Notes",
+      "notesPlaceholder": "Write your details here...",
+      "previousButton": "Previous",
+      "nextButton": "Next"
+    },
+    "step6": {
+      "heading": "You can upload photos and videos of your property here.",
+      "subHeading": "Adding photos and videos increases your ad's visibility.",
+      "imageFormatNote": "Accepted image formats: webp, jpg, jpeg, or png.",
+      "videoFormatNote": "Accepted video format: Mp4.",
+      "videoWarning": "Irrelevant videos will be removed by support.",
+      "selectVideoButton": "Select Video"
+    },
+    "error": {
+      "heading": "There was a problem submitting your listing!",
+      "description": "An error occurred in your listing form. Please review the highlighted information.",
+      "backButton": "Return to Listing"
+    }
+  },
+  "login": {
+    "title": "Login",
+    "welcome": "Welcome to Saghfino",
+    "instruction": "Please enter your mobile phone number to log in.",
+    "agree_terms": "I agree to the Saghfino terms and conditions.",
+    "button": "Login",
+    "email_placeholder": "Email",
+    "phone_placeholder": "Mobile number",
+    "send_otp": "Send OTP",
+    "password_placeholder": "Password"
+  },
+  "otp": {
+    "title": "Verification Code",
+    "instruction": "Enter the code sent to {{phone}}",
+    "edit_number": "Edit mobile number",
+    "resend_in": "Resend code in",
+    "timer": "1:59",
+    "verify": "Verify"
   }
 }
