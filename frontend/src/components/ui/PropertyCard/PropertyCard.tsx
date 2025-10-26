@@ -6,14 +6,14 @@ import { useState } from 'react';
 const PropertyCard = () => {
   const [isBookmarked, isSetBookmarked] = useState(false);
   return (
-    <div className='w-full max-w-[288px] h-auto md:h-[317px] rounded-lg overflow-hidden border-2 border-gray-200'>
-        <div className='h-[100px] md:h-[169px] w-full relative'>
-            <img src={product_listing1} className='object-contain' />
+  <div className='w-full max-w-[288px] h-auto md:max-h-fit rounded-lg overflow-hidden border-2 border-gray-200 flex flex-col'>
+    <div className='h-[100px] md:h-[169px] w-full relative'>
+      <img src={product_listing1} className='w-full h-full object-cover block' />
             <div className="absolute top-2 left-2 bg-[#0C0C0C]/40 text-white body-xxs md:body-xs px-2 py-1 rounded-md">
           ۲ ساعت پیش
         </div>
         </div>
-        <div className='px-[14px] pt-[10px] pb-[24px] space-y-2 md:space-y-1 rtl'>
+        <div className='max-h-fit px-[14px] pt-[5px] pb-[10px] space-y-1 md:space-y-1 rtl'>
             <div className='flex items-center justify-between'>
             <p className='body-xs'>رهن و اجاره آپارتمان تهران</p>
             {isBookmarked ? <HiBookmark onClick={()=>isSetBookmarked(true)} size={18}/> : <HiOutlineBookmark onClick={()=>isSetBookmarked(false)} size={18}/>}

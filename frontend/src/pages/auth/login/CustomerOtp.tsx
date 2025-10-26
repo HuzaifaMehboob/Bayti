@@ -43,15 +43,15 @@ const CustomerOtp = ({ phone = "09123334455" }) => {
         isArabic ? "text-right" : "text-left"
       }`}
     >
-      <h3 className="text-2xl font-semibold text-gray-800">
+      <h3 className="header-6 text-gray-800">
         {t("otp.title")}
       </h3>
 
-      <p className="text-gray-600 mt-2">
+      <p className="text-gray-600 text-center mt-1">
         {t("otp.instruction", { phone })}
       </p>
 
-      <button className="text-[#CB1B1B] mt-3 underline">
+      <button className="text-[#CB1B1B] mt-2 underline body-xs">
         {t("otp.edit_number")}
       </button>
 
@@ -67,7 +67,7 @@ const CustomerOtp = ({ phone = "09123334455" }) => {
               value={digit}
               onChange={(e) => handleChange(e.target.value, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}
-              className="w-12 h-12 text-center border border-gray-300 rounded-lg text-lg font-semibold focus:ring-2 focus:ring-[#CB1B1B] outline-none"
+              className="w-10 h-10 md:w-12 md:h-12 text-center border border-gray-300 rounded-lg text-lg font-semibold focus:ring-2 focus:ring-[#CB1B1B] outline-none"
             />
           ))}
         </div>

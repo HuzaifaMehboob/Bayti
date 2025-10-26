@@ -2,13 +2,14 @@ import { CiLocationOn } from "react-icons/ci";
 import { BsHouseCheck } from "react-icons/bs";
 import { GoShare } from "react-icons/go";
 import { GoBookmark } from "react-icons/go";
+import i18n from "../../i18n";
 
 const AgentProfileDescriptionSection = () => {
     return (
         <div className='mx-auto mt-40 gap-10 max-w-[1220px] w-full px-2 md:px-0 md:w-[90%] '>
             <div className='w-full h-auto flex justify-between px-4'>
 
-                <div className='space-y-4'>
+                <div className={`space-y-4 ${i18n.language === 'ar' ? 'rtl' : 'ltr'}`}>
                     <h3 className='heading-3'>املاک توسی</h3>
                     <p className='body-s text-gray-700 mt-2'>میزان رضایتمندی کاربران: ۴/۹ از ۵0</p>
                     <p className='heading-5'>تخصص ما یافتن خانه دلخواه شماست.</p>

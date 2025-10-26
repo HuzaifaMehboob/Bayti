@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-const Step1 = () => {
+const Step1 = ({ nextStep, previousStep }: { nextStep: () => void; previousStep: () => void; }) => {
   const { t } = useTranslation();
 
   return (
@@ -52,11 +52,10 @@ const Step1 = () => {
 
       {/* Button row */}
       <div className="flex justify-end gap-3 mt-6">
-        <button className="bg-white text-[#CB1B1B] px-6 py-2 rounded-lg border border-[#CB1B1B] transition">
+        <button type="button" className="bg-white text-[#CB1B1B] px-6 py-2 rounded-lg border border-[#CB1B1B] transition" onClick={previousStep}>
           {t("register.step1.previousButton")}
         </button>
-
-        <button className="bg-[#CB1B1B] text-white px-6 py-2 rounded-lg transition">
+        <button type="button" className="bg-[#CB1B1B] text-white px-6 py-2 rounded-lg transition" onClick={nextStep}>
           {t("register.step1.nextButton")}
         </button>
       </div>

@@ -1,10 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import Input from '../../../components/Input/Input';
+import { useForm } from 'react-hook-form';
 
-const CustomerLogin = () => {
+type FormValues = {
+  name: string;
+  identifier: string;
+};
+
+const CustomerLogin: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const [loginType, setLoginType] = useState('email');
-  const [inputValue, setInputValue] = useState('');
+  const [loginType, setLoginType] = React.useState<'email' | 'phone'>('email');
+
+  const { register, handleSubmit, formState: { errors }, watch, trigger, resetField, setValue } = useForm<FormValues>({ mode: 'onBlur' });
 
   // Ensure RTL/LTR direction on language change
   useEffect(() => {
@@ -12,19 +20,45 @@ const CustomerLogin = () => {
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
   }, [i18n.language]);
 
-  const handleTypeChange = (type) => {
-    setLoginType(type);
-    setInputValue('');
+  // When loginType changes, clear identifier and revalidate
+  useEffect(() => {
+    // setValue('identifier', '');
+    // trigger('identifier');
+  }, [loginType, setValue, trigger]);
+
+  const handleTypeChange = (type: 'email' | 'phone') => setLoginType(type);
+
+  const onSubmit = (data: FormValues) => {
+    const payload = {
+      name: data.name.trim(),
+      identifier: data.identifier.trim(),
+      type: loginType,
+    };
+    console.log('submit', payload);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(`${loginType}:`, inputValue);
+  // Validation helpers
+  const nameValidate = (v: string) => {
+    const trimmed = (v ?? '').trim();
+    if (!trimmed) return t('signup.errors.required');
+    // Unicode letters + spaces only
+    if (!/^[\p{L} ]+$/u.test(trimmed)) return t('signup.errors.invalid_name') || 'Invalid name';
+    return true;
+  };
+
+  const identifierValidate = (v: string) => {
+    const trimmed = (v ?? '').trim();
+    if (!trimmed) return loginType === 'email' ? t('signup.errors.required_email') : t('signup.errors.required_phone');
+    if (loginType === 'email') {
+      return /\S+@\S+\.\S+/.test(trimmed) || t('signup.errors.invalid_email');
+    }
+    // phone
+    return /^\+?[0-9]{7,15}$/.test(trimmed) || t('signup.errors.invalid_phone');
   };
 
   return (
     <div
-      className={`w-full max-w-lg mx-auto flex flex-col items-center p-6 bg-white mt-10 ${
+      className={`w-full max-w-lg mx-auto flex flex-col items-center p-6 rounded-3xl md:rounded-none bg-white mt-10 ${
         i18n.language === 'ar' ? 'text-right' : 'text-left'
       }`}
     >
@@ -39,6 +73,7 @@ const CustomerLogin = () => {
         }`}
       >
         <button
+          type="button"
           onClick={() => handleTypeChange('email')}
           className={`px-4 py-2 rounded-lg border transition ${
             loginType === 'email'
@@ -49,6 +84,7 @@ const CustomerLogin = () => {
           {t('login.email_placeholder')}
         </button>
         <button
+          type="button"
           onClick={() => handleTypeChange('phone')}
           className={`px-4 py-2 rounded-lg border transition ${
             loginType === 'phone'
@@ -60,19 +96,27 @@ const CustomerLogin = () => {
         </button>
       </div>
 
-      <form onSubmit={handleSubmit} className="w-full flex flex-col items-center mt-6">
-        <input
-          type={loginType === 'email' ? 'email' : 'tel'}
-          placeholder={
-            loginType === 'email'
-              ? t('login.email_placeholder')
-              : t('login.phone_placeholder')
-          }
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          className="border border-gray-300 rounded-lg p-3 w-[90%] focus:ring-2 focus:ring-[#CB1B1B] outline-none transition"
-          style={{ direction: i18n.language === 'ar' ? 'rtl' : 'ltr' }}
+      <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col items-center mt-6">
+        {/* Name input */}
+        <Input
+          id="name"
+          {...register('name', { validate: nameValidate })}
+          placeholder={t('signup.first_name') || 'Name'}
+          className="border border-gray-300 rounded-lg p-3 w-[90%] focus:ring-2 focus:ring-[#CB1B1B] outline-none transition mb-3"
+          wrapperClassName="w-full flex justify-center"
         />
+        {errors.name && <p className="text-red-500 text-sm mb-2">{errors.name.message as string}</p>}
+
+        {/* Identifier: email or phone */}
+        <Input
+          id="identifier"
+          {...register('identifier', { validate: identifierValidate })}
+          type={loginType === 'email' ? 'email' : 'tel'}
+          placeholder={loginType === 'email' ? t('login.email_placeholder') : t('login.phone_placeholder')}
+          className="border border-gray-300 rounded-lg p-3 w-[90%] focus:ring-2 focus:ring-[#CB1B1B] outline-none transition"
+          wrapperClassName="w-full flex justify-center"
+        />
+        {errors.identifier && <p className="text-red-500 text-sm mt-2">{errors.identifier.message as string}</p>}
 
         <label
           className={`text-sm text-gray-500 mt-3 flex items-center gap-2 `}

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { FiUploadCloud } from "react-icons/fi";
 
-const Step6 = () => {
+const Step6 = ({ nextStep, previousStep }: { nextStep: () => void; previousStep: () => void; }) => {
   const { t } = useTranslation();
 
   // In a real app, you would manage uploaded files via state
@@ -45,10 +45,10 @@ const Step6 = () => {
 
       {/* Buttons row */}
       <div className="flex justify-end gap-3 mt-8">
-        <button className="bg-white text-[#CB1B1B] px-6 py-2 rounded-lg border border-[#CB1B1B] transition">
+        <button type="button" onClick={previousStep} className="bg-white text-[#CB1B1B] px-6 py-2 rounded-lg border border-[#CB1B1B] transition">
           {t("register.step1.previousButton")}
         </button>
-        <button className="bg-[#CB1B1B] text-white px-6 py-2 rounded-lg transition">
+        <button type="button" onClick={nextStep} className="bg-[#CB1B1B] text-white px-6 py-2 rounded-lg transition">
           {t("register.step1.nextButton")}
         </button>
       </div>

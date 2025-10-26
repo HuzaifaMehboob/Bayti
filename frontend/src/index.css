@@ -173,6 +173,18 @@
   line-height: 140%;
 
 }
+.header-6{
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 140%;
+}
+
+.header-7{
+  font-weight:bold;
+  font-size: 16px;
+  line-height: 140%;
+}
+
 
 .heading-4{
   font-weight: bold;
@@ -189,6 +201,12 @@
   }
 }
 
+@media (max-width:800px){
+  .header-6{
+    font-size: 24px;
+  }
+}
+
 @media (max-width: 600px) {
   .display-2 {
     font-size: 28px;
@@ -201,10 +219,47 @@
   font-size: 12px;
   line-height: 120%;
 }
+
+/* Mobile (< md) tweaks: red scrollbar and smaller vertical padding on inputs */
+@media (max-width: 767px) {
+  /* WebKit browsers */
+  ::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #CB1B1B;
+    border-radius: 999px;
+    border: 2px solid transparent; /* creates padding around thumb */
+    background-clip: padding-box;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #CB1B1B transparent;
+  }
+
+  /* Inputs: apply py-2 (0.5rem) vertically while preserving horizontal padding */
+  input,
+  textarea,
+  select {
+    padding-block: 0.5rem; /* py-2 */
+  }
+}
 .body-xs{
   font-size: 10px;
   /* font-weight: 400; */
   line-height: 140%;
+}
+
+.header-6{
+  font-size: 22px;
 }
   /* .body-reg14{
     font-size: 12px;

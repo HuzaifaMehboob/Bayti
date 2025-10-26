@@ -3,20 +3,22 @@ import { useTranslation } from 'react-i18next'
 import Searchbar from '../../components/Searchbar/Searchbar'
 import OfficesCard from '../../components/ui/OfficesCard/OfficesCard'
 import AgentCard from '../../components/ui/AgentCard/AgentCard'
+import React from 'react'
 
 const AgentListingPage = () => {
   const {t,i18n} = useTranslation()
-
+  const [searchedValue, setSearchedValue] = React.useState('');
+  const [agentData, setAgentData] = React.useState<any[]>([]);
   const cards = t('RelatedOffices.offices',{returnObjects:true})
 
   return (
     <div className='mx-auto mt-40 gap-10 max-w-[1220px] w-full px-2 md:px-0 md:w-[90%]  '>
         <h2 className='heading-3'>{t('navbar.li', { returnObjects: true })[1]}</h2>
-        <div className='w-[90%] md:w-3/6 h-12 mt-4'>
-            <Searchbar/>
+        <div className='w-[90%] md:w-3/6 h-10 mt-4'>
+            <Searchbar data={agentData} searchedValue={searchedValue} setSearchedValue={setSearchedValue}/>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto md:mx-0 mt-10 mb-20'>
+    <div className='grid justify-items-center md:justify-items-start grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto md:mx-0 mt-10 mb-20'>
             {Array.from({length:9}).map((_,index)=> (
                 <AgentCard  data={cards[0]} />
             ))}

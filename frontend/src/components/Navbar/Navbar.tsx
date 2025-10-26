@@ -50,7 +50,7 @@ export default function Navbar() {
           {liItems.map((item: string, index: number) => (
             <a
               key={index}
-              href={`/${i18n.language}/${item.toLowerCase().replace(/\s+/g, '-')}`}
+              href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
               className="menu_items text-gray-800 hover:text-gray-900 transition-colors"
             >
               {item}

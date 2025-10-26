@@ -234,20 +234,47 @@
     ]
   },
   "filters": {
+    "name": "Filters",
     "filterMaps": [
       {
-        "name": "Region"
+        "name": "Region",
+        "type": "select",
+        "options": [
+          "Tehran",
+          "Mashhad",
+          "Isfahan",
+          "Shiraz",
+          "Tabriz"
+        ]
       },
       {
-        "name": "Property Type"
+        "name": "Property Type",
+        "type": "select",
+        "options": [
+          "Apartment",
+          "House",
+          "Beach House",
+          "Cabins",
+          "Pool House",
+          "Lakefront",
+          "Farm House"
+        ]
       },
       {
-        "name": "Price"
+        "name": "Price",
+        "type": "range",
+        "min": 0,
+        "max": 1000000
       },
       {
-        "name": "Area"
+        "name": "Area",
+        "type": "range",
+        "min": 0,
+        "max": 10000
       }
     ],
+    "apply": "Apply",
+    "reset": "Clear",
     "moreFilters": "More Filters",
     "tehran": "Tehran",
     "addCity": "Add Desired City"
@@ -487,5 +514,88 @@
     "resend_in": "Resend code in",
     "timer": "1:59",
     "verify": "Verify"
+  },
+  "signup": {
+    "title": "Agent / Company Signup",
+    "welcome": "Create your account to start listing properties",
+    "instruction": "Fill in the details below to register",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "company_name": "Company Name",
+    "role": "Role",
+    "role_placeholder": "Select your role",
+    "agent": "Agent",
+    "company": "Company",
+    "agree_terms": "I agree to the Terms & Conditions",
+    "signup_button": "Sign Up",
+    "have_account": "Already have an account?",
+    "login_here": "Log in here",
+    "errors": {
+      "required": "This field is required",
+      "password_match": "Passwords must match",
+      "invalid_email": "Invalid email address",
+      "invalid_name": "Name may only contain letters and spaces",
+      "required_email": "Email is required",
+      "required_phone": "Phone number is required",
+      "invalid_phone": "Invalid phone number"
+    }
+  },
+   "userLogin": {
+    "welcome": "Welcome to Saqfino",
+    "instruction": "Please enter your mobile number to continue",
+    "agree_terms": "I agree with Saqfino's terms",
+    "button": "Login"
+  },
+  "AdditionalFilters": {
+    "filters": [
+    {
+      "heading": "Bedrooms",
+      "options": ["5+", "4", "3", "2", "1", "No bedroom", "Any"]
+    },
+    {
+      "heading": "Parking",
+      "options": ["3+", "2", "1", "None", "Any"]
+    },
+    {
+      "heading": "Storage",
+      "options": ["3+", "2", "1", "None", "Any"]
+    },
+    {
+      "heading": "Bathrooms",
+      "options": ["4+", "3", "2", "1", "Any"]
+    },
+    {
+      "heading": "Bathroom Type",
+      "options": ["Both", "Western", "Iranian", "Doesn’t matter"]
+    },
+    {
+      "heading": "Elevator",
+      "options": ["3+", "2", "1", "Doesn’t matter"]
+    },
+    {
+      "heading": "Floor",
+      "options": ["5+", "4", "3", "2", "1", "Ground floor", "Doesn’t matter"]
+    },
+    {
+      "heading": "Cooling System",
+      "options": ["Chiller", "Fan coil", "Split", "Evaporative cooler", "Doesn’t matter"]
+    },
+    {
+      "heading": "Heating System",
+      "options": ["Radiator", "Underfloor", "Fireplace", "Split", "Central", "Doesn’t matter"]
+    },
+    {
+      "heading": "Floor Material",
+      "options": ["Mosaic", "Laminate", "Parquet", "Ceramic", "Stone", "Doesn’t matter"]
+    }
+  ],
+  "buttons": {
+    "search": "Search",
+    "reset": "Clear Filters"
   }
+}
 }

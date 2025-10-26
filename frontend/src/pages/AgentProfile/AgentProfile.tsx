@@ -45,7 +45,7 @@ const AgentProfile = () => {
                 </div>
 
                 {/* Property Cards */}
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 mb-20'>
+                <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 mt-10 mb-20 px-auto'>
                     {Array.from({ length: 8 }).map((_, index) => (
                         <PropertyCard key={index} />
                     ))}
@@ -59,10 +59,14 @@ const AgentProfile = () => {
             <div className='mx-auto mt-30 gap-10 max-w-[1220px] w-full px-2 md:px-0 md:w-[90%]'>
                 <h2 className='heading-3'>نظرات کاربران</h2>
 
-                <div className='mt-10 space-x-4 flex items-center'>
-                    {Array.from({ length: 4 }).map((_, index) => (
-                        <PropertyReviewCard />
-                    ))}
+                <div className='my-10  px-2 snap-x snap-mandatory overflow-x-auto'>
+                    <div className='flex items-start gap-4 '>
+                        {Array.from({ length: 8 }).map((_, index) => (
+                            <div key={index} className='snap-start flex-none w-[90%] sm:w-1/2 md:w-1/3 lg:w-1/4 mx-auto '>
+                                <PropertyReviewCard />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 

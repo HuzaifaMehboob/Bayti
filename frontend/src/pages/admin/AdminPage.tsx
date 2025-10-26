@@ -10,6 +10,7 @@ import {
 } from "react-icons/fi";
 import ProfileSection from "../../components/ProfileSection/ProfileSection";
 import AddPropertyCard from "../../components/AddPropertySection/AddPropertySection";
+import Register from "../auth/register/register";
 
 const AdminPage = () => {
   const { t } = useTranslation();
@@ -45,9 +46,9 @@ const AdminPage = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="col-span-12 md:col-span-9">
+  <main className="col-span-12 md:col-span-9 min-h-0">
         {activeItem === "edit_info" && <ProfileSection />}
-        {activeItem === "new_listing" && <AddPropertyCard/>}
+        {activeItem === "new_listing" && <Register/>}
         {activeItem === "my_listings" && (
           <div className="p-6 bg-white rounded-2xl shadow-md">
             <h2 className="text-xl font-semibold">{t("AdminSideBar.my_listings")}</h2>

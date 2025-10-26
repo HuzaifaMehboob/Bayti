@@ -6,9 +6,15 @@ import RecommendPropertySection from '../../components/RecommendPropertySection/
 import SimpleMap from '../../components/SimpleMap/SimpleMap'
 
 const RentPage = () => {
+  const [searchedValue,setSearchedValue] = React.useState<string>('')
+
+  const handleSearch = (value: string) => {
+    setSearchedValue(value);
+    // You can also trigger a search API call here based on the value
+  }
   return (
     <div className='mt-40'>
-        <FilterBar/>
+        <FilterBar onSearch={handleSearch} value={searchedValue} setSearchedValue={setSearchedValue}/>
         <div className='mx-auto gap-10 flex justify-between max-w-[1220px] w-full px-2 md:px-0 md:w-[90%] '>
             <div className='w-full md:w-1/2 mt-20 space-y-12'>
                 <SearchedResultsSection />
