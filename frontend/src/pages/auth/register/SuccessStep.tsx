@@ -6,6 +6,10 @@ import vector3 from "../../../assets/vector3.png";
 import vector4 from "../../../assets/vector4.png";
 import tick from "../../../assets/tick_sign.png";
 
+// Weighted vector array — vector1 & 4 appear less often
+// kept at module scope so it is stable and doesn't need to be a useEffect dependency
+const WEIGHTED_VECTORS = [vector1, vector2, vector2, vector3, vector3, vector4];
+
 const SuccessStep = () => {
   const { i18n } = useTranslation();
   const heading =
@@ -13,23 +17,14 @@ const SuccessStep = () => {
       ? "آگهی شما با موفقیت ثبت شد"
       : "Your advertisement has been successfully submitted.";
 
-  // Weighted vector array — vector1 & 4 appear less often
-  const weightedVectors = [
-    vector1,
-    vector2,
-    vector2,
-    vector3,
-    vector3,
-    vector4,
-  ];
-  // (vector2 & 3 appear twice as often)
+  // use module-scoped WEIGHTED_VECTORS to keep the array stable across renders
 
-  const [particles, setParticles] = useState([]);
+  const [particles, setParticles] = useState<any[]>([]);
 
   useEffect(() => {
     const totalParticles = 50;
     const newParticles = Array.from({ length: totalParticles }).map(() => ({
-      src: weightedVectors[Math.floor(Math.random() * weightedVectors.length)],
+      src: WEIGHTED_VECTORS[Math.floor(Math.random() * WEIGHTED_VECTORS.length)],
       top: Math.random() * 100,
       left: Math.random() * 100,
       delay: Math.random() * 0.8,

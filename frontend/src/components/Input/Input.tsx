@@ -58,6 +58,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props & Record<
             placeholder={placeholder}
             {...(value !== undefined ? { value: (value as string) } : {})}
             {...restProps}
+            onChange={onChange}
             className={`${baseClasses} pr-10 border-gray-300 ${className}`}
           />
         ) : (
@@ -69,6 +70,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props & Record<
             placeholder={placeholder}
             {...(value !== undefined ? { value: (value as string | number) } : {})}
             {...restProps}
+            onChange={onChange}
             className={`${baseClasses} pr-10 border-gray-300 ${className}`}
           />
         )}

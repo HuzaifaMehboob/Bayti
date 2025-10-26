@@ -1,14 +1,14 @@
 
 import { useTranslation } from 'react-i18next'
 import Searchbar from '../../components/Searchbar/Searchbar'
-import OfficesCard from '../../components/ui/OfficesCard/OfficesCard'
 import AgentCard from '../../components/ui/AgentCard/AgentCard'
 import React from 'react'
 
 const AgentListingPage = () => {
-  const {t,i18n} = useTranslation()
+  const {t} = useTranslation()
   const [searchedValue, setSearchedValue] = React.useState('');
-  const [agentData, setAgentData] = React.useState<any[]>([]);
+//   const [agentData, setAgentData] = React.useState<any[]>([]);
+  const agentData = t('RelatedOffices.offices', { returnObjects: true }) as any[];
   const cards = t('RelatedOffices.offices',{returnObjects:true})
 
   return (
@@ -19,8 +19,8 @@ const AgentListingPage = () => {
         </div>
 
     <div className='grid justify-items-center md:justify-items-start grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto md:mx-0 mt-10 mb-20'>
-            {Array.from({length:9}).map((_,index)=> (
-                <AgentCard  data={cards[0]} />
+            {Array.from({length:9}).map(()=> (
+                <AgentCard data={cards[0]} />
             ))}
         </div>
 

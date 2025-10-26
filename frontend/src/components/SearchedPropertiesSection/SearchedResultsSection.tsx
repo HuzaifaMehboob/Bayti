@@ -6,7 +6,7 @@ import PropertyCard from '../ui/PropertyCard/PropertyCard';
 import AdditionalFiltersModal from '../dialogs/AdditionalFiltersModal';
 
 const SearchedResultsSection = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const [openFilterModal, setOpenFilterModal] = React.useState(false);
 
     return (

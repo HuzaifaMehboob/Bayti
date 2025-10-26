@@ -1,9 +1,8 @@
 import { useTranslation } from "react-i18next"
-import image from '../../assets/aboutpageImage.png';
 import SimpleMap from "../../components/SimpleMap/SimpleMap";
 
 const ContactUsPage = () => {
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
   return (
 
     <div className="w-[95%] xl:w-[1224px] mx-auto mt-40 mb-40 px-15">

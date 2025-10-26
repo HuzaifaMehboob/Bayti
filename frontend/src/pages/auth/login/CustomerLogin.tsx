@@ -12,7 +12,7 @@ const CustomerLogin: React.FC = () => {
   const { t, i18n } = useTranslation();
   const [loginType, setLoginType] = React.useState<'email' | 'phone'>('email');
 
-  const { register, handleSubmit, formState: { errors }, watch, trigger, resetField, setValue } = useForm<FormValues>({ mode: 'onBlur' });
+  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ mode: 'onBlur' });
 
   // Ensure RTL/LTR direction on language change
   useEffect(() => {
@@ -22,9 +22,10 @@ const CustomerLogin: React.FC = () => {
 
   // When loginType changes, clear identifier and revalidate
   useEffect(() => {
+    // If you want to clear/revalidate when loginType changes, uncomment and use these:
     // setValue('identifier', '');
     // trigger('identifier');
-  }, [loginType, setValue, trigger]);
+  }, [loginType]);
 
   const handleTypeChange = (type: 'email' | 'phone') => setLoginType(type);
 

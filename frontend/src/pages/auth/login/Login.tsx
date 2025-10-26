@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import registerImage from '../../../assets/register_image.png';
 import { useTranslation } from 'react-i18next';
-import CustomerLogin from './CustomerLogin';
-import CustomerOtp from './CustomerOtp';
+// import CustomerLogin from './CustomerLogin';
+// import CustomerOtp from './CustomerOtp';
 import AgentLogin from './AgentLogin';
 
 function Login() {

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { MdOutlineCancel } from "react-icons/md";
 
 const AdditionalFiltersModal = ({setOpenFilterModal}: {setOpenFilterModal: React.Dispatch<React.SetStateAction<boolean>>}) => {
-  const {t, i18n} = useTranslation();
+  const {t} = useTranslation();
 
   const filters = t('AdditionalFilters.filters', { returnObjects: true }) as any[];
    const [selectedOptions, setSelectedOptions] = React.useState<{ [key: number]: string }>({});

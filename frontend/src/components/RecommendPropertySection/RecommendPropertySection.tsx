@@ -1,11 +1,8 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { HiBars4 } from "react-icons/hi2";
 import PropertyCard from '../ui/PropertyCard/PropertyCard';
 
 const RecommendPropertySection = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const relatedItems = t('RecommendedProperties.locations', { returnObjects: true });
 
     return (

@@ -13,7 +13,7 @@ import ContactUsPage from "./pages/ContactUs/ContactUsPage";
 import Register from "./pages/auth/register/register";
 import Login from "./pages/auth/login/Login";
 import AgentSignup from "./pages/auth/Signup/Signup";
-import { useEffect } from "react";
+// useEffect was previously imported but unused; removed to satisfy linter
 
 const Layout = () => {
   const location = useLocation();

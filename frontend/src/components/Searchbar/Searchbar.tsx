@@ -1,16 +1,14 @@
 import { BiSearch } from "react-icons/bi";
-import { RxCross2 } from "react-icons/rx";
 
 interface SearchbarProps {
     placeholder?: string;
-    value?: string;
     data?: any[];
     searchedValue?: string;
     setSearchedValue?: (value: string) => void | undefined;
 
 }
 
-const Searchbar = ({data,placeholder, value,setSearchedValue, searchedValue}: SearchbarProps) => {
+const Searchbar = ({data,placeholder,setSearchedValue, searchedValue}: SearchbarProps) => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = e.target.value;
         setSearchedValue?.(newValue);

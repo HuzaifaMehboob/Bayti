@@ -1,15 +1,16 @@
-import { t } from 'i18next'
+// import { t } from 'i18next'
 import { useTranslation } from 'react-i18next'
 import Searchbar from '../../components/Searchbar/Searchbar'
 import OfficesCard from '../../components/ui/OfficesCard/OfficesCard'
 import React from 'react'
 
 const RealEstatePage = () => {
-  const {t,i18n} = useTranslation()
+  const {t} = useTranslation()
 
   // local search state (kept minimal and consistent with AgentListingPage)
   const [searchedValue, setSearchedValue] = React.useState('')
-  const [officesData, setOfficesData] = React.useState<any[]>([])
+//   const [officesData, setOfficesData] = React.useState<any[]>([])
+    const officesData = t('RelatedOffices.offices', { returnObjects: true }) as any[];
 
   const cards = t('RelatedOffices.offices',{returnObjects:true})
 

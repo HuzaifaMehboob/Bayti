@@ -1,4 +1,4 @@
-import registerImage from '../../../assets/register_image.png';
+// import registerImage from '../../../assets/register_image.png';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import Step1 from './Step1';
@@ -14,9 +14,10 @@ import StepProgressBar from '../../../components/StepProgressBar/StepProgressBar
 const Register = () => {
   const [step, setStep] = useState(1);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
-  const [formData, setFormData] = useState({});
-  const { i18n, t } = useTranslation();
+  // const [error, setError] = useState(false);
+  const error = false;
+  // const [formData, setFormData] = useState({});
+  const { i18n } = useTranslation();
 
   const nextStep = () => setStep((prev) => {
     const newStep = Math.min(prev + 1, 6);

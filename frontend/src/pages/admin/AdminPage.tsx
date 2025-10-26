@@ -9,7 +9,7 @@ import {
   FiLogOut
 } from "react-icons/fi";
 import ProfileSection from "../../components/ProfileSection/ProfileSection";
-import AddPropertyCard from "../../components/AddPropertySection/AddPropertySection";
+// import AddPropertyCard from "../../components/AddPropertySection/AddPropertySection";
 import Register from "../auth/register/register";
 
 const AdminPage = () => {

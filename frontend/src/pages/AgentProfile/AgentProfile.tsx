@@ -7,7 +7,7 @@ import { useTranslation} from 'react-i18next';
 import PropertyReviewCard from '../../components/ui/PropertyReviewCard/PropertyReviewCard';
 
 const AgentProfile = () => {
-    const {t,i18n} = useTranslation()
+    const {t} = useTranslation()
     const displayedAgents = 11
 
     return (

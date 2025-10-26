@@ -4,15 +4,14 @@ import Input from '../../../components/Input/Input';
 import { useForm } from 'react-hook-form';
 const AgentLogin = () => {
   const { t, i18n } = useTranslation();
-  const [loginType, setLoginType] = useState('email');
-  const [inputValue, setInputValue] = useState('');
+  const [loginType, setLoginType] = useState<'email' | 'phone'>('email');
 
   type FormValues = {
     password: string;
     identifier: string;
   };
 
-  const { register, handleSubmit, formState: { errors }, watch, trigger, resetField, setValue } = useForm<FormValues>({ mode: 'onBlur' });
+  const { register, handleSubmit } = useForm<FormValues>({ mode: 'onBlur' });
 
   // Ensure RTL/LTR direction on language change
   useEffect(() => {
@@ -20,9 +19,8 @@ const AgentLogin = () => {
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
   }, [i18n.language]);
 
-  const handleTypeChange = (type) => {
+  const handleTypeChange = (type: 'email' | 'phone') => {
     setLoginType(type);
-    setInputValue('');
   };
 
   const onSubmit = (data: FormValues) => {

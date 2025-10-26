@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next"
 import image from '../../assets/aboutpageImage.png';
 
 const AboutUsPage = () => {
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
   return (
     <div className="w-[90%] xl:w-[1224px] mx-auto mt-40 mb-40 px-6">
         <h3 className="header-4">{t("about-us-page.heading")}</h3>

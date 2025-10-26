@@ -2,10 +2,23 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Searchbar from '../Searchbar/Searchbar'
 
-const FilterBar: React.FC = ({onSearch,value,setSearchedValue}:{onSearch?: any,value?:string,setSearchedValue?: (value:string) => void}) => {
-    const { t, i18n } = useTranslation()
-    // read filters metadata from locales; returnObjects allows arrays/objects
-    const filters = (t('filters.filterMaps', { returnObjects: true }) as any) || [];
+interface Filter {
+    name: string
+    type?: 'select' | 'range'
+    options?: string[]
+    min?: number
+    max?: number
+}
+
+interface Props {
+    value?: string
+    setSearchedValue?: (value: string) => void
+}
+
+const FilterBar: React.FC<Props> = ({ value, setSearchedValue }) => {
+        const { t, i18n } = useTranslation()
+        // read filters metadata from locales; returnObjects allows arrays/objects
+        const filters = (t('filters.filterMaps', { returnObjects: true }) as Filter[]) || [];
 
 
     const [openDropdown, setOpenDropdown] = useState<string>('')
@@ -29,7 +42,7 @@ const FilterBar: React.FC = ({onSearch,value,setSearchedValue}:{onSearch?: any,v
     return (
         <div className='h-12 w-full md:max-w-[90%] xl:max-w-[1220px] max-auto md:mx-0 lg:mx-auto flex md:flex-col lg:flex-row items-center gap-3'>
             <div className='hidden lg:flex gap-3 h-full md:h-1/2 lg:h-full'>
-                {filters.map((filter: any, index: number) => (
+                {filters.map((filter: Filter, index: number) => (
                     <div key={index} className='relative h-full'>
                         <div
                             className={`h-full border-1 border-[#ADADAD] px-4 gap-2 flex items-center rounded-[8px] filter-toggle ${i18n.language === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}
@@ -45,14 +58,14 @@ const FilterBar: React.FC = ({onSearch,value,setSearchedValue}:{onSearch?: any,v
                             <div className='bg-white absolute border border-gray-300 shadow-md z-50 translate-y-1 p-3 min-w-54 rounded-lg filter-panel'>
                                 {filter.type === 'select' && (
                                     <div>
-                                        {filter.options?.map((option: any, idx: number) => (
-                                            <div key={idx} className='py-1 hover:bg-gray-100 cursor-pointer body-xxs flex items-center'>
-                                                <input type='checkbox' id={`${filter.name}-${option}`} name={option} className='mr-2' />
-                                                <label htmlFor={`${filter.name}-${option}`} className='cursor-pointer'>
-                                                    {option}
-                                                </label>
-                                            </div>
-                                        ))}
+                                                {filter.options?.map((option: string, idx: number) => (
+                                                    <div key={idx} className='py-1 hover:bg-gray-100 cursor-pointer body-xxs flex items-center'>
+                                                        <input type='checkbox' id={`${filter.name}-${option}`} name={option} className='mr-2' />
+                                                        <label htmlFor={`${filter.name}-${option}`} className='cursor-pointer'>
+                                                            {option}
+                                                        </label>
+                                                    </div>
+                                                ))}
                                     </div>
                                 )}
 

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { PiBuildingLight, PiHouseLight, PiUmbrellaLight, PiTreeEvergreenLight, PiSwimmingPoolLight, PiBarnLight } from "react-icons/pi";
-import { LuTreePine, LuWaves } from "react-icons/lu";
+import { LuWaves } from "react-icons/lu";
 import { MdOutlineCabin } from "react-icons/md";
 import PropertyCard from "../ui/PropertyCard/PropertyCard";
 

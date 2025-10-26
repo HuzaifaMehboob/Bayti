@@ -9,12 +9,12 @@ import PropertyGallerySection from '../../components/PropertyGallerySection/Prop
 import { FaBuilding } from "react-icons/fa"; // Floor
 import { FaBed } from "react-icons/fa"; // Bedrooms
 import { MdSquareFoot } from "react-icons/md"; // Area
-import { BiMoney, BiCalendar } from "react-icons/bi";
+// import { BiMoney, BiCalendar } from "react-icons/bi";
 import { extrapropertyDetails, facilities } from '../../constants/PropertyFacilities';
 import PropertyCard from '../../components/ui/PropertyCard/PropertyCard';
 import AgentInfoCard from '../../components/ui/AgentInfoCard/AgentInfoCard';
 
-export const propertyDetails = [
+const propertyDetails = [
     {
         label: "طبقه",
         value: "۳ از ۴",
@@ -33,7 +33,7 @@ export const propertyDetails = [
 ];
 
 
-export const rentDetails = [
+const rentDetails = [
     {
         label: "ودیعه",
         value: "۶۰۰ میلیون تومان",
@@ -68,7 +68,7 @@ const PropertyPage = () => {
                         <h3 className='heading-5'>۲۰۰ متر، محدوه ونک، بلوار دانش</h3>
                         <div className='w-full flex items-center py-4 rounded-[12px]  justify-between bg-[#f1efef]'>
                             {propertyDetails?.map((item, index) => (
-                                <div className='flex flex-col items-center justify-center space-y-2 w-1/3'>
+                                <div key={index} className='flex flex-col items-center justify-center space-y-2 w-1/3'>
                                     <div className='flex items-center gap-2'>
                                         <item.icon />
                                         <p>{item.label}</p>
@@ -81,7 +81,7 @@ const PropertyPage = () => {
 
                         <div className='space-y-4'>
                             {rentDetails.map((item, index) => (
-                                <div className='w-full py-2 border-1 border-[#E1E1E1] rounded-[8px] flex items-center justify-between px-4'>
+                                <div key={index} className='w-full py-2 border-1 border-[#E1E1E1] rounded-[8px] flex items-center justify-between px-4'>
                                     <p className='header-4'>{item.label}</p>
                                     <p className='heading-6'>{item.value}</p>
                                 </div>
@@ -114,15 +114,15 @@ const PropertyPage = () => {
 
                     </div>
 
-                    <div className='space-y-4'>
+                        <div className='space-y-4'>
                         <h5 className="heading-5">توضیحات</h5>
                         <div className='space-y-2'>
-                            {extrapropertyDetails.map((item,index)=> (
-                                <p className='body-s '>{`${item.label}: ${item.value}`}</p>
-                                    
+                            {extrapropertyDetails.map((item) => (
+                                <p key={`${item.label}-${item.value}`} className='body-s '>{`${item.label}: ${item.value}`}</p>
+
                             ))}
                         </div>
-                        
+
                     </div>
 
 
@@ -137,7 +137,7 @@ const PropertyPage = () => {
                         <h5 className='heading-5'>آگهی‌های مشابه</h5>
                         <div className='flex flex-col md:flex-row items-center space-x-4 overflow-x-auto flex-shrink-0'>
                             {Array.from({length:4}).map((_,index) => (
-                                <PropertyCard/>
+                                <PropertyCard key={index}/>
                             ))}
                         </div>
                     </div>
