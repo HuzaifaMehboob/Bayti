@@ -7,7 +7,12 @@ interface RealEstateOffice {
   activeListings: string;  // Active listings text (could also be split into number)
   viewReviews: string;     // Text to view reviews (may include review count)
 }
-const OfficesCard = ({data}: RealEstateOffice) => {
+
+interface Props {
+  data?: RealEstateOffice
+}
+
+const OfficesCard = ({ data }: Props) => {
   return (
     <div className='w-[288px] h-[336px] flex flex-col items-center text-center border-1 border-[#E1E1E1] rounded-[16px] space-y-2 px-[32px] py-[32px]'>
         <div className='gap-2 flex flex-col items-center'>

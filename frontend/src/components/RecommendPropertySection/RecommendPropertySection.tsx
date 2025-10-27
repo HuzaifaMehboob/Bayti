@@ -3,13 +3,13 @@ import PropertyCard from '../ui/PropertyCard/PropertyCard';
 
 const RecommendPropertySection = () => {
     const { t } = useTranslation();
-    const relatedItems = t('RecommendedProperties.locations', { returnObjects: true });
+    const relatedItems = t('RecommendedProperties.locations', { returnObjects: true }) as { label: string }[];
 
     return (
         <div className='w-full h-auto '>
             <h1 className='text-[#353535] heading-3'>{t('RecommendedProperties.heading')}</h1>
             <div className="flex flex-wrap gap-3 w-auto items-center mt-6">
-                {relatedItems.map((item, index) => (
+                {relatedItems.map((item, index:number) => (
                     <div
                         key={index}
                         className="px-3 py-1 border border-[#EDEDED] rounded-[4px] text-sm"

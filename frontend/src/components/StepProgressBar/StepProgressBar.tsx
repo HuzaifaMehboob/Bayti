@@ -1,4 +1,3 @@
-import React from "react";
 
 const StepProgressBar = ({ step, totalSteps = 6 }: any) => {
   const steps = Array.from({ length: totalSteps }, (_, i) => i + 1);

@@ -8,17 +8,17 @@ import footer_img from '../../assets/footer_img.png'
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
-  const firstGrid = t("footer.grids", { returnObjects: true });
+  const firstGrid = t("footer.grids", { returnObjects: true }) as { title: string; items: string[] }[];
 
   // Only 3 icons for the last grid's first 3 items
   const images = [
     <FaPhone className="text-red-500" size={18} />,
-    <AiFillInstagram className="text-red-500" size={18}/>,
+    <AiFillInstagram className="text-red-500" size={18} />,
     <FaTelegram className="text-red-500" size={18} />,
   ];
 
-   const experience = t("footer.experience", { returnObjects: true });
-   const cards = t("footer.cards", {returnObjects: true});
+  const experience = t("footer.experience", { returnObjects: true }) as string[];
+  const cards = t("footer.cards", { returnObjects: true }) as { title: string; items: string[] }[];
 
   // First line
   const firstLine = experience[0];
@@ -60,37 +60,37 @@ const Footer = () => {
         </div>
       </div>
 
-     <div className="w-[90%] xl:w-[1220px] mx-auto pt-8">
-  <div className={`grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 ${i18n.language === "ar" ? "pr-6" : "pl-6"}`}>
-    {/* Column 1: Image + Experience */}
-    <div className="space-y-1">
-      <img src={logo} alt="logo" className="w-[187px] mb-4" />
-      <p className="body-xs !font-semibold">{firstLine}</p>
-      <div>
-        {remainingLines.map((ele, index) => (
-          <p key={index} className="caption-md text-[#353535]">{ele}</p>
-        ))}
-      </div>
-    </div>
+      <div className="w-[90%] xl:w-[1220px] mx-auto pt-8">
+        <div className={`grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 ${i18n.language === "ar" ? "pr-6" : "pl-6"}`}>
+          {/* Column 1: Image + Experience */}
+          <div className="space-y-1">
+            <img src={logo} alt="logo" className="w-[187px] mb-4" />
+            <p className="body-xs !font-semibold">{firstLine}</p>
+            <div>
+              {remainingLines.map((ele, index) => (
+                <p key={index} className="caption-md text-[#353535]">{ele}</p>
+              ))}
+            </div>
+          </div>
 
-    {/* Columns 2-4: Cards */}
-    {cards?.map((card, index) => (
-      <div key={index}>
-        <p className="caption-lg">{card?.title}</p>
-        <div className="gap-1">
-          {card?.items.map((ele, i) => (
-            <p key={i} className="caption-md text-[#717171]">{ele}</p>
+          {/* Columns 2-4: Cards */}
+          {cards?.map((card, index) => (
+            <div key={index}>
+              <p className="caption-lg">{card?.title}</p>
+              <div className="gap-1">
+                {card?.items.map((ele, i: number) => (
+                  <p key={i} className="caption-md text-[#717171]">{ele}</p>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
- 
-        <img src={footer_img} alt="footer image" className="mx-auto mt-12" />
-        <p className="mt-5 text-center caption-md text-[#909090]">{t('footer.footerCopyright')}</p>
 
- 
+      <img src={footer_img} alt="footer image" className="mx-auto mt-12" />
+      <p className="mt-5 text-center caption-md text-[#909090]">{t('footer.footerCopyright')}</p>
+
+
     </div>
   );
 };

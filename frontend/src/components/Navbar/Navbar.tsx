@@ -24,8 +24,8 @@ export default function Navbar() {
     setLangOpen(false);
   };
 
-  const endItems = t('navbar.end', { returnObjects: true });
-  const liItems = t('navbar.li', { returnObjects: true });
+  const endItems = t('navbar.end', { returnObjects: true }) as string[];
+  const liItems = t('navbar.li', { returnObjects: true }) as string[];
 
   const liIcons = [
     <MdOutlineNewspaper size={18} />,
@@ -144,7 +144,7 @@ export default function Navbar() {
           )}
 
           {/* Main Links */}
-          {liItems.map((item: string, index: number) => (
+          {liItems?.map((item: string, index: number) => (
             <div key={index} className="flex items-center justify-between">
               <a
                 href={`/${i18n.language}/${item.toLowerCase().replace(/\s+/g, '-')}`}

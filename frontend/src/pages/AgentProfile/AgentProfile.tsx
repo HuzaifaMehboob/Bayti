@@ -8,7 +8,8 @@ import PropertyReviewCard from '../../components/ui/PropertyReviewCard/PropertyR
 
 const AgentProfile = () => {
     const {t} = useTranslation()
-    const displayedAgents = 11
+    const displayedAgents = 11;
+    const agentFilters = t("AgentFilters", { returnObjects: true }) as { label: string }[];
 
     return (
         <div className='space-y-8'>
@@ -33,7 +34,7 @@ const AgentProfile = () => {
 
                 {/* Filters Row */}
                 <div className="flex flex-wrap items-center gap-3 mt-4">
-                    {t("AgentFilters", { returnObjects: true }).map((item, index) => (
+                    {agentFilters?.map((item, index) => (
                         <div
                             className='flex items-center border border-[#E1E1E1] rounded-[8px] px-4 py-2 gap-2 cursor-pointer'
                             key={index}

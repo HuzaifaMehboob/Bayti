@@ -1,4 +1,5 @@
 import React from 'react'
+import type { MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MdOutlineCancel } from "react-icons/md";
 
@@ -43,7 +44,7 @@ const AdditionalFiltersModal = ({setOpenFilterModal}: {setOpenFilterModal: React
                 <div key={index} className='space-y-1 flex flex-col my-2'>
                   <h5 className='header-7'>{filter.heading}</h5>
                   <div className='flex max-w-fit border border-gray-400 rounded-md overflow-hidden '>
-                    {filter.options.map((option, idx) => {
+                    {filter.options.map((option:any, idx:number) => {
                       const isSelected = selectedOptions[filter.heading] === option;
                       return (
                       <span key={idx} onClick={()=>handleSelect(filter.heading,option)} className={`border flex hover:cursor-pointer items-center justify-center border-gray-300 px-5 py-1 caption-lg ${isSelected 

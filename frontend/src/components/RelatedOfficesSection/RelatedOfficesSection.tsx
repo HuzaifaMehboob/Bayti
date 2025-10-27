@@ -3,7 +3,7 @@ import OfficesCard from '../ui/OfficesCard/OfficesCard'
 
 const RelatedOfficesSection = () => {
   const { t } = useTranslation()
-  const cards = t('RelatedOffices.offices', { returnObjects: true })
+  const cards = t('RelatedOffices.offices', { returnObjects: true }) as any[]
 
   return (
     <div className="w-full h-auto space-y-4">

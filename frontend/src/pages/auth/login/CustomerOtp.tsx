@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+
 
 const CustomerOtp = ({ phone = "09123334455" }) => {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === "ar";
   const [otp, setOtp] = useState(new Array(6).fill(""));
-  const inputRefs = useRef([]);
+  const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
@@ -13,24 +14,24 @@ const CustomerOtp = ({ phone = "09123334455" }) => {
   }, [i18n.language, isArabic]);
 
   // Handle OTP input and auto-focus next box
-  const handleChange = (value, index) => {
+  const handleChange = (value: any, index: number) => {
     if (/[^0-9]/.test(value)) return; // only digits
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
 
     if (value && index < 5) {
-      inputRefs.current[index + 1].focus();
+      inputRefs.current[index + 1]?.focus();
     }
   };
 
-  const handleKeyDown = (e, index) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
     if (e.key === "Backspace" && !otp[index] && index > 0) {
-      inputRefs.current[index - 1].focus();
+      inputRefs.current[index - 1]?.focus();
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const enteredOtp = otp.join("");
     console.log("Entered OTP:", enteredOtp);
@@ -61,9 +62,9 @@ const CustomerOtp = ({ phone = "09123334455" }) => {
           {otp.map((digit, index) => (
             <input
               key={index}
-              ref={(el) => (inputRefs.current[index] = el)}
+              ref={(el) => { inputRefs.current[index] = el; }}
               type="text"
-              maxLength="1"
+              maxLength={1}
               value={digit}
               onChange={(e) => handleChange(e.target.value, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}

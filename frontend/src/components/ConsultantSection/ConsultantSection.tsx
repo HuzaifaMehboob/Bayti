@@ -13,7 +13,7 @@ const ConsultantSection = () => {
     document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
   }, [i18n.language]);
 
-  const cards = t("consultantsSection.cards", { returnObjects: true });
+  const cards = t("consultantsSection.cards", { returnObjects: true }) as { title: string }[];
 
   return (
     <div className="w-[90%] xl:w-[1224px] mx-auto mt-24 mb-40">
@@ -25,7 +25,7 @@ const ConsultantSection = () => {
 
       {/* Cards */}
       <div className="flex flex-col lg:flex-row  justify-between gap-6">
-        {cards.map(
+        {cards?.map(
           (card: { title: string }, index: number) => (
             <div
               key={index}

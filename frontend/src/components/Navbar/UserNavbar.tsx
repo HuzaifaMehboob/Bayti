@@ -8,6 +8,9 @@ export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [langOpen, setLangOpen] = useState(false);
 
+  const navbarEnd = t('navbar.end', { returnObjects: true }) as string[];
+  const navbarLinks = t('navbar.li', { returnObjects: true }) as string[];
+
   useEffect(() => {
     document.documentElement.lang = i18n.language;
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
@@ -28,7 +31,7 @@ export default function Navbar() {
           i18n.language === 'ar' ? 'mr-10' : 'ml-10'
         }`}
         >
-          {t('navbar.li', { returnObjects: true }).map((item: string, index: number) => (
+          {navbarLinks?.map((item: string, index: number) => (
             <a
               key={index}
               href={`/${i18n.language}/${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -79,7 +82,7 @@ export default function Navbar() {
         </div>
 
         {/* Login + Post Ad */}
-        {t('navbar.end', { returnObjects: true }).map((item: string, index: number) => {
+        {navbarEnd?.map((item: string, index: number) => {
           const isPostAd = index === 1;
           return (
             <a

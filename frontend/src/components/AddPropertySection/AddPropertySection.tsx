@@ -7,7 +7,18 @@ const AddPropertyCard = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar";
 
-  const [formData, setFormData] = useState({
+  interface FormData {
+    title: string;
+    description: string;
+    price: string;
+    location: string;
+    type: string;
+    rooms: string;
+    baths: string;
+    images: File[];
+  }
+
+  const [formData, setFormData] = useState<FormData>({
     title: "",
     description: "",
     price: "",
@@ -15,30 +26,30 @@ const AddPropertyCard = () => {
     type: "apartment",
     rooms: "",
     baths: "",
-    images: []
+    images: [] as File[]
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target as HTMLInputElement;
+    setFormData((prev) => ({ ...prev, [name]: value } as unknown as FormData));
   };
 
-  const handleImageUpload = (e) => {
-    const files = Array.from(e.target.files);
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files ?? []) as File[];
     setFormData((prev) => ({
       ...prev,
       images: [...prev.images, ...files]
     }));
   };
 
-  const removeImage = (index) => {
+  const removeImage = (index: number) => {
     setFormData((prev) => ({
       ...prev,
       images: prev.images.filter((_, i) => i !== index)
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Submitted Property:", formData);
     alert(t("Add_Listing.submit") + " ✅");

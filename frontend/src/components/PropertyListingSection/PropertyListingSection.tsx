@@ -13,7 +13,7 @@ const PropertyListingSection = () => {
     document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
   }, [i18n.language]);
 
-  const cards = t("consultantsSection.cards", { returnObjects: true });
+  const cards = t("consultantsSection.cards", { returnObjects: true }) as { title: string }[];
 
   return (
     <div className="w-[1200px] mx-auto mt-24">

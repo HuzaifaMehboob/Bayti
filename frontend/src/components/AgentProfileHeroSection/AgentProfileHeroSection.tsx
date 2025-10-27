@@ -1,4 +1,3 @@
-import React from 'react'
 import image from '../../assets/Banner.png'
 import logo from '../../assets/Real Estate Logo 1.png'
 import { FaWhatsapp, FaLinkedin, FaInstagram, FaGlobe } from 'react-icons/fa'

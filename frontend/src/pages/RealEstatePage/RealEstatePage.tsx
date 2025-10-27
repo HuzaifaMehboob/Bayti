@@ -7,16 +7,18 @@ import React from 'react'
 const RealEstatePage = () => {
   const {t} = useTranslation()
 
+  // if(!ready) return null;
   // local search state (kept minimal and consistent with AgentListingPage)
   const [searchedValue, setSearchedValue] = React.useState('')
 //   const [officesData, setOfficesData] = React.useState<any[]>([])
     const officesData = t('RelatedOffices.offices', { returnObjects: true }) as any[];
 
-  const cards = t('RelatedOffices.offices',{returnObjects:true})
-
+  const cards = t('RelatedOffices.offices', { returnObjects: true }) as any[];
+  const navItems = t('navbar.li', { returnObjects: true }) as string[];
+  const navbar = navItems[2];
   return (
     <div className='mx-auto mt-40 gap-10 max-w-[1220px] w-full px-2 md:px-0 md:w-[90%]  '>
-        <h2 className='heading-3'>{t('navbar.li', { returnObjects: true })[2]}</h2>
+        <h2 className='heading-3'>{navbar}</h2>
         <div className='w-[90%] md:w-3/6 h-12 mt-4'>
             <Searchbar data={officesData} searchedValue={searchedValue} setSearchedValue={setSearchedValue} />
         </div>

@@ -1,11 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import type { IconType } from "react-icons";
 import { PiBuildingLight, PiHouseLight, PiUmbrellaLight, PiTreeEvergreenLight, PiSwimmingPoolLight, PiBarnLight } from "react-icons/pi";
 import { LuWaves } from "react-icons/lu";
 import { MdOutlineCabin } from "react-icons/md";
 import PropertyCard from "../ui/PropertyCard/PropertyCard";
 
-const icons = {
+const icons: Record<string, IconType> = {
   PiBuildingLight: PiBuildingLight,
   PiHouseLight: PiHouseLight,
   PiUmbrellaLight: PiUmbrellaLight,
@@ -16,17 +17,20 @@ const icons = {
   PiBarnLight: PiBarnLight
 };
 
+type Category = { label: string; icon: string };
+type PropertyTypeHelp = { heading?: string; categories: Category[] };
+
 const PropertyTypeSection = () => {
   const { t } = useTranslation();
-  const help = t("propertyTypeSection", { returnObjects: true });
+  const help = t("propertyTypeSection", { returnObjects: true }) as PropertyTypeHelp;
 
   // ✅ Track selected category, default = first one
-  const [selected, setSelected] = useState(help.categories[0]?.icon);
+  const [selected, setSelected] = useState<string | undefined>(help.categories[0]?.icon);
 
   // ✅ Split categories into two halves for mobile layout
   const half = Math.ceil(help.categories.length / 2);
-  const firstHalf = help.categories.slice(0, half);
-  const secondHalf = help.categories.slice(half);
+  const firstHalf: Category[] = help.categories.slice(0, half);
+  const secondHalf: Category[] = help.categories.slice(half);
 
   return (
     <div className="w-[90%] xl:w-[1220px] mx-auto my-24">
@@ -35,8 +39,8 @@ const PropertyTypeSection = () => {
       {/* ✅ Mobile: Two rows */}
       <div className="flex flex-col gap-4 md:hidden">
         <div className="flex justify-center gap-6">
-          {firstHalf.map((category, index) => {
-            const Icon = icons[category.icon];
+          {firstHalf.map((category: Category, index: number) => {
+            const Icon = icons[category.icon] ?? MdOutlineCabin;
             const isSelected = selected === category.icon;
             return (
               <div
@@ -60,8 +64,8 @@ const PropertyTypeSection = () => {
         </div>
 
         <div className="flex justify-center gap-6">
-          {secondHalf.map((category, index) => {
-            const Icon = icons[category.icon];
+          {secondHalf.map((category: Category, index: number) => {
+            const Icon = icons[category.icon] ?? MdOutlineCabin;
             const isSelected = selected === category.icon;
             return (
               <div
@@ -87,8 +91,8 @@ const PropertyTypeSection = () => {
 
       {/* ✅ Desktop: Single row */}
       <div className="hidden md:flex items-center gap-10 mx-auto max-w-fit">
-        {help.categories.map((category, index) => {
-          const Icon = icons[category.icon];
+        {help.categories.map((category: Category, index: number) => {
+          const Icon = icons[category.icon] ?? MdOutlineCabin;
           const isSelected = selected === category.icon;
 
           return (
